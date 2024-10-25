@@ -1,4 +1,7 @@
 menu = """
+Banco Digital Inovation!
+
+Escolha a operação que deseja realizar:
 
 [d] Depositar
 [s] Sacar
@@ -18,7 +21,7 @@ while True:
     opcao = input(menu)
 
     if opcao == "d":
-        valor = float(input("Informe o valor do depósito: "))
+        valor = float(input("Informe o valor que deseja depositar: "))
 
         if valor > 0:
             saldo += valor
@@ -36,19 +39,21 @@ while True:
 
         excedeu_saques = numero_saques >= LIMITE_SAQUES
 
+        
         if excedeu_saldo:
             print("Operação falhou! Você não tem saldo suficiente.")
 
         elif excedeu_limite:
-            print("Operação falhou! O valor do saque excede o limite.")
+            print("Operação falhou! O valor do saque excedeu o limite. Máximo permitido por saque é R$ 500.")
 
         elif excedeu_saques:
-            print("Operação falhou! Número máximo de saques excedido.")
+            print("Operação falhou! Número máximo de saques diário excedido.")
 
         elif valor > 0:
             saldo -= valor
             extrato += f"Saque: R$ {valor:.2f}\n"
             numero_saques += 1
+            print("Saque realizado com sucesso!")
 
         else:
             print("Operação falhou! O valor informado é inválido.")
@@ -60,6 +65,7 @@ while True:
         print("==========================================")
 
     elif opcao == "q":
+        print("Operação finalizada!")
         break
 
     else:
