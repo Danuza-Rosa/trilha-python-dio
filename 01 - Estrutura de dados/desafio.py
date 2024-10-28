@@ -3,6 +3,8 @@ import textwrap
 
 def menu():
     menu = """\n
+    ======================================
+            Banco Digital Inovation!
     ================ MENU ================
     [d]\tDepositar
     [s]\tSacar
@@ -11,6 +13,8 @@ def menu():
     [lc]\tListar contas
     [nu]\tNovo usuário
     [q]\tSair
+    
+    Escolha a operação que deseja realizar:
     => """
     return input(textwrap.dedent(menu))
 
